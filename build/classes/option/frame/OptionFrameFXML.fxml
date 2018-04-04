@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox id="VBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="option.frame.OptionFrameFXMLController">
+    <stylesheets>
+        <URL value="@optionframefxml.css" />
+    </stylesheets>
+   <children>
+      <TabPane tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+        <tabs>
+          <Tab closable="false" text="Allgemein" />
+          <Tab closable="false" text="Verbindungen">
+               <content>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <VBox>
+                           <children>
+                              <ListView fx:id="listConnection">
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin></ListView>
+                              <ButtonBar prefHeight="40.0" prefWidth="200.0">
+                                <buttons>
+                                  <Button fx:id="btnDelete" mnemonicParsing="false" onMouseClicked="#clickDelete" text="Löschen" />
+                                    <Button fx:id="btnAddConnectionList" mnemonicParsing="false" onMouseClicked="#clickAddConnection" text="Hinzufügen" />
+                                </buttons>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </ButtonBar>
+                           </children>
+                        </VBox>
+                        <Separator orientation="VERTICAL" prefHeight="413.0" prefWidth="0.0" />
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <center>
+                              <Group BorderPane.alignment="CENTER">
+                                 <children>
+                                    <VBox prefHeight="138.0" prefWidth="378.0">
+                                       <children>
+                                          <Label text="Name:">
+                                             <VBox.margin>
+                                                <Insets bottom="3.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtName">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <Label text="IP-Adresse:">
+                                             <VBox.margin>
+                                                <Insets bottom="3.0" left="2.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <TextField fx:id="txtIPOne">
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </TextField>
+                                                <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="10.0" minWidth="10.0" prefWidth="10.0" text=".">
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" right="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <TextField fx:id="txtIPTwo" />
+                                                <Label alignment="CENTER" maxWidth="10.0" minWidth="10.0" prefWidth="10.0" text=" . ">
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" right="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <TextField fx:id="txtIPThree" />
+                                                <Label maxWidth="10.0" minWidth="10.0" prefWidth="10.0" text=" . ">
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" right="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <TextField fx:id="txtIPFour">
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </TextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <Label text="Rack:">
+                                             <VBox.margin>
+                                                <Insets bottom="3.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtRackNo">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <Label text="Socket:">
+                                             <VBox.margin>
+                                                <Insets bottom="3.0" left="2.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtSlotNo">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                       </children>
+                                       <padding>
+                                          <Insets left="5.0" right="10.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                              </Group>
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </HBox>
+               </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Separator />
+      <ButtonBar>
+        <buttons>
+            <Button fx:id="btnSave" mnemonicParsing="false" onMouseClicked="#clickSave" text="Speichern" />
+          <Button fx:id="btnCancel" mnemonicParsing="false" onMouseClicked="#clickCancel" text="Abbruch" />
+        </buttons>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </ButtonBar>
+   </children>
+</VBox>
